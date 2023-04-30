@@ -31,9 +31,18 @@ export class App extends Component {
   }
 
   handleSubmit = query => {
-    this.setState(() => {
-      return { query: query, page: 1, images: [] };
-    });
+    if (this.state.query !== query) {
+      this.setState({
+        query,
+        page: 1,
+        images: [],
+      });
+    } else {
+      toast(
+        `Recurring search.
+        Please enter another request.`
+      );
+    }
   };
 
   onLoadMore = () => {

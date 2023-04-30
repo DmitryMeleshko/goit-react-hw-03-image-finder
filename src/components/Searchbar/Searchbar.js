@@ -22,7 +22,7 @@ export class Searchbar extends Component {
     const { query } = this.state;
     const { onSubmit } = this.props;
 
-    if (query === '') {
+    if (query === " ") {
       return toast.error('😱 Please enter a value for search images!');
     }
 
@@ -44,7 +44,6 @@ export class Searchbar extends Component {
             autoFocus
             placeholder="Search images and photos"
             onChange={this.handleChange}
-            value={this.state.query}
           />
         </SearchForm>
       </SearchShell>
